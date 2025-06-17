@@ -83,7 +83,7 @@ exports.GetHolderDetails=async(req,res)=>{
 exports.ProfileUpdate=async(req,res)=>{
   const Id=req.id._id;
   try{
-   const baseUrl=`http://localhost:4000`
+   const baseUrl=`http://13.233.163.118:4000`
      const data=await User.findByIdAndUpdate(Id,{Profile:`${baseUrl}/${req.file?.path.replace(/\\/g, '/')}`})
     if(data){
       return res.status(200).json({message:"Profile updated successfully"});
